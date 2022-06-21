@@ -14,11 +14,8 @@ public class BirthdayNotifier {
     }
 
     public void sendNotifications() {
-        // find all upcoming birthdays
         List<String> birthdays = birthdayRepository.upcomingBirthdays();
 
-        // STEP 1: find all Users whose birthday is in the upcoming birthday list
-        // STEP 2: send notification to the found users
         birthdays.forEach(birthday -> userRepository.findUser(birthday).forEach(this::sendSmsMessage));
     }
 

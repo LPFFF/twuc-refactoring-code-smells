@@ -8,9 +8,10 @@ public class ShapePrinter {
     }
 
     public String printRectangleInfo() {
-        int area = rectangle.getHeight() * rectangle.getWidth();
-        int perimeter = (rectangle.getHeight() + rectangle.getWidth()) * 2;
+        int area = rectangle.getArea(rectangle.getHeight(), rectangle.getWidth());
+        int perimeter = rectangle.getArea(rectangle.getHeight() + rectangle.getWidth(), 2);
 
         return String.format("Area: %s, Perimeter: %s", area, perimeter);
     }
+
 }
